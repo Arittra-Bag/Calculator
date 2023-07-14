@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//db.onlinewebfonts.com/c/bfbdc6a04609bff0d5ccdfcf6b766d95?family=Flood+Std" rel="stylesheet" type="text/css"/>
+  <title>Responsive Basic Calculator</title>
+  <style>
+    .calculator {
+      max-width: 300px;
+      margin: 0 auto;
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: rgba(0, 255, 255, 0.278);
+    }
+
+    body {
+      background-image: url('Calculator-Bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+    }
+
+    #result {
+      width: 100%;
+      padding: 5px;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.807);
+      border-radius: 3.5px;
+      color: aqua;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5px;
+    }
+
+    button {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.633);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+    background-color: rgba(0, 255, 247, 0.675);
+    transform: translateY(-2px);
+    }
+
+    button:active {
+    background-color: #0004ff98;
+    transform: translateY(0);
+    box-shadow: none;
+    }
+
+    .calculator-heading {
+    text-align: center;
+    font-family: "Flood Std", sans-serif;
+    font-size: 32px;
+    background-color: rgba(0, 0, 0, 0.64);
+    color: white;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    }
+
+    footer {
+    background-color: rgba(247, 247, 247, 0.578);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    }
+
+    footer p {
+    margin: 0;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1 class="calculator-heading">BASIC CALCULATOR</h1>
+  <div class="calculator">
+    <div class="display">
+      <input type="text" id="result" disabled />
+    </div>
+    <div class="keypad">
+      <button onclick="clearResult()">C</button>
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('+')">+</button>
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('-')">-</button>
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="appendValue('*')">*</button>
+      <button onclick="appendValue('0')">0</button>
+      <button onclick="appendValue('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendValue('/')">/</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Arittra Bag</p>
+  </footer>
+
+  <script>
+    function appendValue(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function calculate() {
+      const result = eval(document.getElementById("result").value);
+      document.getElementById("result").value = result;
+    }
+
+    function clearResult() {
+      document.getElementById("result").value = "";
+    }
+  </script>
+</body>
+
+</html>
