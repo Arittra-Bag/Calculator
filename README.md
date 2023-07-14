@@ -11,7 +11,7 @@ This is a basic calculator web application built using HTML, CSS, and JavaScript
 
 ## Demo
 
-A live demo of the calculator can be accessed [here](https://your-demo-link.com).
+A live demo of the calculator can be accessed [here](https://arittra-bag.github.io/Calculator/).
 
 ## Installation
 
